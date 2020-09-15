@@ -12,21 +12,33 @@
   <body>
     <% if flash[:notice] %>
       <div class="alert alert-primary" role="alert">
-        <p class="notice"><%= Notice! %></p>
+        <p class="notice"><%= "Notice!" %></p>
       </div>
     <% end %>
   
     <% if flash[:alert] %>
       <div class="alert alert-danger" role="alert">
-        <p class="alert"><%= Alert! %></p>
+        <p class="alert"><%= "Alert!" %></p>
       </div>
     <% end %>
 
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+    <%= link_to "Railsbook", root_path, class: "navbar-brand" %>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-link" href="#">Find new Friends</a>
+      <a class="nav-link" href="#">Notifications</a>
+      <a class="nav-link" href="#">Profile</a>
+    </div>
+  </div>
+</nav>
 
-
-
+<div class ="container">
     <%= yield %>
-
+</div>
 
     
   </body>

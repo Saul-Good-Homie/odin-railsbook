@@ -41,7 +41,7 @@ gem 'simple_form'
 
 gem 'bootstrap', '~> 5.0.0.alpha1'
 gem 'jquery-rails'
-
+gem 'popper_js', '~> 1.14.5'
 gem 'devise'
 
 group :development, :test do

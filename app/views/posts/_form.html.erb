@@ -1,13 +1,10 @@
-
 <%= simple_form_for(@post) do |f| %>
   <%= f.error_notification %>
-  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-
-  <div class="form-inputs">
-    <%= f.input :post %>
+  <div class= "form-group">
+    <div class="form-control">
+      <%= f.input :post, label: "What's on your mind?", input_html: { class: "textarea "}, wrapper: false, label_html: {class: "label"}, placeholder: "Compose a new Post...", autofocus: true %>
+    </div>
+    <%= f.button :submit, class: "button btn-primary" %>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
-<% end %>
+  
+  <% end %>
