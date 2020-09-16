@@ -7,22 +7,23 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://kit.fontawesome.com/12500c009c.js" crossorigin="anonymous"></script>
   </head>
 
   <body>
     <% if flash[:notice] %>
       <div class="alert alert-primary" role="alert">
-        <p class="notice"><%= "Notice!" %></p>
+        <p class="notice"><%= notice %></p>
       </div>
     <% end %>
   
     <% if flash[:alert] %>
       <div class="alert alert-danger" role="alert">
-        <p class="alert"><%= "Alert!" %></p>
+        <p class="alert"><%= alert %></p>
       </div>
     <% end %>
 
-    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+    <nav class="navbar mb-1 navbar-expand-lg navbar-dark bg-primary">
     <%= link_to "Railsbook", root_path, class: "navbar-brand" %>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
