@@ -29,11 +29,18 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+  <% if user_signed_in?%>
     <div class="navbar-nav">
+      <%= link_to current_user.name, edit_user_registration_path, class: "nav-link"%>
       <a class="nav-link" href="#">Find new Friends</a>
       <a class="nav-link" href="#">Notifications</a>
-      <a class="nav-link" href="#">Profile</a>
+      
+      <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "nav-link" %>
+      <% else  %>
+        <%= link_to "Sign In", new_user_session_path, class: "nav-link bg-light"%>
+        <%= link_to "Sign Up", new_user_registration_path, class: "nav-link bg-light"%>
     </div>
+    <% end %>
   </div>
 </nav>
 
