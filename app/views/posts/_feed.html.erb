@@ -1,6 +1,6 @@
 <% @posts.each do |post| %>
 <div class="card mb-3"> 
-    <div class= "row">
+    <div class= "row mb-1">
         <div class="col">
             <img class="rounded-circle" src="https://bulma.io/images/placeholders/64x64.png">
         </div>
@@ -36,13 +36,19 @@
                     </button>
         
             </div>   
+            <% else %>
+                <div class="col">
+
+                </div>
             <% end %>         
     </div>
     
     <div class= "row">
         <div class="col">
-            <div class= "card-body">
-                <%= post.post %>
+            <div class="card">
+                <div class= "card-body">
+                    <%= post.post %>
+                </div>
             </div>
         </div>
     </div>
@@ -59,7 +65,7 @@
             </div>
 
         </div>
-        <div class="btn-group">
+        <div class="btn-group mb-1">
         <% if user_signed_in? %>  
                 <% pre_like = post.likes.find { |like| like.user_id == current_user.id} %>
                 
@@ -74,10 +80,24 @@
                     <% end %>
                 <% end %>
         <% end %>
-
             <%= link_to "Comment", '#',  method: :post, class: "btn btn-secondary" %>
-
         </div>
+
+    <div class="row">
+        <div class="col">
+            <% @comments = post.comments.all %>
+            <% @comments.each do |c| %>
+                <div class="card">
+                    <div class= "card-body">
+                        <%= c.body %>
+                    </div>                    
+                </div>
+            <% end %>
+        </div>
+        <% comment = Comment.new %>
+        <%= render partial: "comments/form", locals: { comment: comment, post: post } %>
+    </div>
+        
 </div>
 
 <% end %> 

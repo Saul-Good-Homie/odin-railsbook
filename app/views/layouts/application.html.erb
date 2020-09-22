@@ -25,22 +25,24 @@
 
     <nav class="navbar mb-1 navbar-expand-lg navbar-dark bg-primary">
     <%= link_to "Railsbook", root_path, class: "navbar-brand" %>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
   <% if user_signed_in?%>
-    <div class="navbar-nav">
+    <div class="navbar-nav ml-auto">
       <%= link_to current_user.name, edit_user_registration_path, class: "nav-link"%>
       <a class="nav-link" href="#">Find new Friends</a>
       <a class="nav-link" href="#">Notifications</a>
-      
       <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "nav-link" %>
-      <% else  %>
-        <%= link_to "Sign In", new_user_session_path, class: "nav-link bg-light"%>
-        <%= link_to "Sign Up", new_user_registration_path, class: "nav-link bg-light"%>
-    </div>
-    <% end %>
+      </div>
+    <% else  %>
+        <div class="navbar-nav ml-auto">
+        <%= link_to "Sign In", new_user_session_path, class: "nav-link"%>
+        <%= link_to "Sign Up", new_user_registration_path, class: "nav-link"%>
+        </div>
+    
+  <% end %>
   </div>
 </nav>
 

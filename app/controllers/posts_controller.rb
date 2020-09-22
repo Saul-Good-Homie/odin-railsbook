@@ -7,6 +7,7 @@ class PostsController < ApplicationController
   def index
     @posts = Post.all.order("created_at DESC")
     @post = Post.new
+    @comment = Comment.new(post_id: params[:post_id])
   end
 
   # GET /posts/1

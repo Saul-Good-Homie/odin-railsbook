@@ -1,0 +1,5 @@
+<%##there is no association for the comments to link to the post in index view.%>
+<% @comments = post.comments.all %>
+            <% @comments.each do |c| %>
+            <%= c.body %>
+<% end %>
