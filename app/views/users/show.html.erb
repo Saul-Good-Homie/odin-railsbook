@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row">
+    <div class="col text-center">
+        <h1 class="text-center">Profile Section</h1>
+        <h4><%= @user.name %></h4>
+        <h5><%= @user.email%></h5>
+    </div>
+
+    <div class="col-6">
+        <h1 class="text-center">News Feed</h1>
+        <div class="row mb-3">
+        <%# render 'post/form', post: @post %>
+        </div>
+
+        <div class="row">
+        <%# render 'feed' %>
+        </div>
+    </div>
+
+    <div class="col text-center">
+        <h1 class="text-center">Find new friends</h1>
+    </div>
+  </div>
+</div>
+
+<p id="notice"><%= notice %></p>
