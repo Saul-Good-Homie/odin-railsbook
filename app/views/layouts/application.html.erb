@@ -7,6 +7,8 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    
     <script src="https://kit.fontawesome.com/12500c009c.js" crossorigin="anonymous"></script>
   </head>
 
@@ -32,7 +34,7 @@
   <% if user_signed_in?%>
     <div class="navbar-nav ml-auto">
       <%= link_to current_user.name, current_user, class: "nav-link"%>
-      <a class="nav-link" href="#">Find new Friends</a>
+      <%= link_to "Find New Friends", users_path, class: "nav-link"%>
       <a class="nav-link" href="#">Notifications</a>
       <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "nav-link" %>
       </div>

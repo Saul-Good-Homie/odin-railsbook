@@ -1,24 +1,22 @@
 <div class="container">
   <div class="row">
     <div class="col text-center">
-        <h1 class="text-center">Profile Section</h1>
-        <h4><%= @user.name %></h4>
-        <h5><%= @user.email%></h5>
+        <%= render 'posts/profile' %>
     </div>
 
     <div class="col-6">
-        <h1 class="text-center">News Feed</h1>
+        <h3 class="text-center">News Feed</h3>
         <div class="row mb-3">
-        <%# render 'post/form', post: @post %>
+        <%= render 'posts/form', post: @post %>
         </div>
 
         <div class="row">
-        <%# render 'feed' %>
+            <%= render 'posts/feed', posts: @posts %>
         </div>
     </div>
 
     <div class="col text-center">
-        <h1 class="text-center">Find new friends</h1>
+        <h3 class="text-center">Third Section</h3>
     </div>
   </div>
 </div>

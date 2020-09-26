@@ -1,6 +1,18 @@
-<h1>Users#index</h1>
+<h1> Add New Friends! </h1>
 
-<% @users.each do |user| %>
-  <%= user.name %><br/>
-  <%= user.email %><br/>
-<% end %>
+<div class="row row-cols-1 row-cols-md-3">
+    <div class="col mb-4">
+        <% @users.each do |user| %>
+            <div class="card mb-1">
+                <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title"><%= user.name %></h5>
+                        <p class="card-text"><%= user.email %></p>
+                        <button type="button" class="btn btn-primary">Add Friend</button>
+                        <button type="button" class="btn btn-primary">View Profile</button>
+                    </div>
+            </div>
+        <% end %>
+    </div>
+</div>
+
