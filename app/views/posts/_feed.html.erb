@@ -61,7 +61,7 @@
             </div>
 
             <div class= "col">
-                Number of comments here
+                <%= post.comments.count %> <%= (post.comments.count) == 1 ? 'Comment' : 'Comments'%>
             </div>
 
         </div>
@@ -87,10 +87,14 @@
         <div class="col">
             <% @comments = post.comments.all %>
             <% @comments.each do |c| %>
+            <% commentator = User.where(id: c.user_id) %>
                 <div class="card">
-                    <div class= "card-body">
-                        <%= c.body %>
-                    </div>                    
+                    <div>
+                        <small> <%= commentator.name %> </small>
+                        <div class= "card-body">
+                            <%= c.body %>
+                        </div>  
+                    </div>                  
                 </div>
             <% end %>
         </div>

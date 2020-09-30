@@ -9,7 +9,7 @@
                         <h5 class="card-title"><%= user.name %></h5>
                         <p class="card-text"><%= user.email %></p>
                         <button type="button" class="btn btn-primary">Add Friend</button>
-                        <button type="button" class="btn btn-primary">View Profile</button>
+                        <%= link_to "View Profile", user, class: "btn btn-primary"%>
                     </div>
             </div>
         <% end %>
