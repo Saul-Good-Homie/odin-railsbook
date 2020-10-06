@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :friendships
   match '/users',   to: 'users#index',   via: 'get'
   match '/users/:id',     to: 'users#show',       via: 'get'
   devise_for :users, :controllers => {registrations: "registrations"}, :path_prefix => 'd'

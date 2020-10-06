@@ -85,12 +85,10 @@
 
     <div class="row">
         <div class="col">
-            <% @comments = post.comments.all %>
-            <% @comments.each do |c| %>
-            <% commentator = User.where(id: c.user_id) %>
+            <% post.comments.each do |c| %>
                 <div class="card">
                     <div>
-                        <small> <%= commentator.name %> </small>
+                    <small> <%= c.user.name %> </small>
                         <div class= "card-body">
                             <%= c.body %>
                         </div>  

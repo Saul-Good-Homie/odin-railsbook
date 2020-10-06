@@ -1,0 +1,11 @@
+<div class="card" style="width: 18rem;">
+    <div class="card-header">
+        Friend Requests
+    </div>
+    <ul class="list-group list-group-flush text-left">
+      <% for user in @user.inverse_friends %>
+        <%=h user.name %> Sent you a friend Request
+        <%= link_to "Accept Friend Request", friendships_path(:friend_id => user), :method => :post, class: "btn btn-primary" %>
+    <% end %>
+    </ul>
+</div>

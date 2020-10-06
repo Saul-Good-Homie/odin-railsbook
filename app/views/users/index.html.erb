@@ -3,12 +3,13 @@
 <div class="row row-cols-1 row-cols-md-3">
     <div class="col mb-4">
         <% @users.each do |user| %>
+        <% next if user.id == current_user.id %>
             <div class="card mb-1">
                 <img src="..." class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title"><%= user.name %></h5>
                         <p class="card-text"><%= user.email %></p>
-                        <button type="button" class="btn btn-primary">Add Friend</button>
+                        <%= link_to "Add Friend", friendships_path(:friend_id => user), :method => :post, class: "btn btn-primary" %>
                         <%= link_to "View Profile", user, class: "btn btn-primary"%>
                     </div>
             </div>
@@ -16,3 +17,4 @@
     </div>
 </div>
 
+<%# need to figure out to filter for if they are already friends, change to remove friend%>
