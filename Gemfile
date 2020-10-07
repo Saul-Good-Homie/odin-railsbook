@@ -43,6 +43,7 @@ gem 'bootstrap', '~> 5.0.0.alpha1'
 gem 'jquery-rails'
 gem 'popper_js', '~> 1.14.5'
 gem 'devise'
+gem 'has_friendship'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
