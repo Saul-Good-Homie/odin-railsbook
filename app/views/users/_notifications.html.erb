@@ -1,11 +1,25 @@
 <div class="card" style="width: 18rem;">
     <div class="card-header">
-        Friend Requests
+    Friend Requests
     </div>
-    <ul class="list-group list-group-flush text-left">
-      <% for user in @user.inverse_friends %>
-        <%=h user.name %> Sent you a friend Request
-        <%= link_to "Accept Friend Request", friendships_path(:friend_id => user), :method => :post, class: "btn btn-primary" %>
-    <% end %>
-    </ul>
+        <ul class= "list-group list-group-flush">
+            <% @user.pending_friends.each do |p| %>
+            <li class = "list-group-item">
+                <%="You sent a friend request to #{p.name}"%>
+            <% end %>
+            </li>
+
+            <% @user.requested_friends.each do |p| %>
+            <li class = "list-group-item">
+                <%="#{p.name} sent you a friend request"%>
+                <%= link_to "Accept Friend Request", friends_accept_path, class: "btn btn-primary" %>
+                <%= link_to "Decline Friend Request", friends_decline_path, class: "btn btn-primary" %>
+            <% end %>
+            </li>
+            
+
+        </ul>
+
+        
+
 </div>

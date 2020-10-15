@@ -9,12 +9,19 @@
                     <div class="card-body">
                         <h5 class="card-title"><%= user.name %></h5>
                         <p class="card-text"><%= user.email %></p>
-                        <%= link_to "Add Friend", friendships_path(:friend_id => user), :method => :post, class: "btn btn-primary" %>
-                        <%= link_to "View Profile", user, class: "btn btn-primary"%>
+                <% if current_user.friends_with?(user)%>
+                    <%= link_to "Remove Friend", friends_remove_path(id: user.id), method: :post, class: "btn btn-warning" %>
+                <% elsif current_user.pending_friends.include?(user)%>
+                    <%= link_to "Request Pending!", '#', class: "btn btn-secondary" %>
+                <% elsif current_user.requested_friends.include?(user) %>
+                    <%= link_to "Accept Friend Request", friends_accept_path(id: user.id), method: :post, class: "btn btn-success" %>
+                <% else%>
+                    <%= link_to "Add Friend", friends_path(id: user.id), method: :post, class: "btn btn-primary" %>
+                <% end %>
+                    <%= link_to "View Profile", user, class: "btn btn-primary"%>
                     </div>
             </div>
         <% end %>
     </div>
 </div>
 
-<%# need to figure out to filter for if they are already friends, change to remove friend%>

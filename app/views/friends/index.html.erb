@@ -1,0 +1,16 @@
+
+    <h3>Friend Requests </h3>
+
+    <% @requests.each do |f| %>
+        <%= f.name %>
+    <% end %>
+
+    <h3>Pending Friend Requests </h3>
+  <% @pending.each do |f| %>
+        <%= f.name %>
+    <% end %>
+
+    <h3>Friends </h3>
+      <% @friends.each do |f| %>
+        <%= f.name %>
+    <% end %>
