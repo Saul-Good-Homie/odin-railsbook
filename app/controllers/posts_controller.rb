@@ -8,6 +8,7 @@ class PostsController < ApplicationController
     @posts = Post.all.order("created_at DESC")
     @post = Post.new
     @comment = Comment.new(post_id: params[:post_id])
+    @users = User.all
   end
 
   # GET /posts/1

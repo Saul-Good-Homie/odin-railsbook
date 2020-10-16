@@ -3,9 +3,22 @@
         Find New Friends
     </div>
     <ul class="list-group list-group-flush text-left">
-        <li class="list-group-item">Pat Mahomes</li>
-        <li class="list-group-item">Lamar Jackson </li>
-        <li class="list-group-item">Russel Wilson</li>
+        <% @users.each do |user| %>
+        <% next if current_user.id == user.id %>
+        <% next if current_user.friends_with?(user)%>
+        <% next if  current_user.requested_friends.include?(user) %>
+        <% if current_user.pending_friends.include?(user)%>
+            <li class= "list-group-item">
+                <%= link_to user.name, user, class: "btn btn-outline-primary btn-sm"%>
+                <%= link_to "Request Pending!", '#', class: "btn btn-secondary btn-sm" %>
+            </li>
+        <% else %>
+            <li class= "list-group-item"> 
+            <%= link_to user.name, user, class: "btn btn-outline-primary btn-sm"%>
+            <%= link_to "Add Friend", friends_path(id: user.id), method: :post, class: "btn btn-primary btn-sm" %>
+        </li>
+        <% end %>
+        <% end %>
         <%=link_to "View All", users_path, class: "list-group-item" %>
     </ul>
 </div>
