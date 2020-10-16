@@ -1,15 +1,20 @@
-
-<div class="card mb-3" style="max-width: 560px;">
-    <div class="row no-gutters">
-        <div class="col-md-4">
-            <img src="https://bulma.io/images/placeholders/64x64.png">
-        </div>
-        
-        <div class="col-md-8">
-            <div class="card-body">
+<div class="card mb-3">
+    <div class= "card-body">
+        <div class= "row no-gutters align-items-center">
+            <div class="col-md-auto">
+                <img src="https://bulma.io/images/placeholders/64x64.png">
+            </div>
+            <div class="col text-left">
                 <h5 class="card-title"><%=current_user.name%></h5>
-                <p class="card-text">Posts: <small class="text-muted"><%= current_user.posts.count%></small></p> 
-                <p class="card-text">Friends: <small class="text-muted"><%= 267%></small></p> 
+            </div>
+        </div>
+
+        <div class= "row no-gutters align-items-center">
+            <div class="col-md-auto">
+                <p class="card-text"><p class="font-weight-bold">Posts: <small class="text-muted"><%= current_user.posts.count%></small></p> 
+            </div>
+            <div class="col-md-auto">
+                <p class="card-text"><p class="font-weight-bold">Friends: <small class="text-muted"><%= current_user.friends.count%></small></p> 
             </div>
         </div>
     </div>

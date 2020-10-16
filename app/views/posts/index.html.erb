@@ -1,17 +1,17 @@
 <div class="container">
   <div class="row">
     <div class="col text-center">
-    <%= render "profile" %>
+      <%= render "profile" %>
     </div>
-    <div class="col-6">
+    <div class="col-sm-6">
       <h1 class="text-center">News Feed</h1>
-        <div class="row mb-3">
+      <div class="row mb-3">
         <%= render 'form', post: @post %>
-        </div>
+      </div>
 
-        <div class="row">
-        <%= render 'feed' %>
-        </div>
+      <div class="row">
+          <%= render 'feed' %>
+      </div>
     </div>
     <div class="col text-center">
         <%= render "find_friends"%>

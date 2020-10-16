@@ -3,7 +3,7 @@
         Find New Friends
     </div>
     <ul class="list-group list-group-flush text-left">
-        <% @users.each do |user| %>
+        <% @users.limit(3).each do |user| %>
         <% next if current_user.id == user.id %>
         <% next if current_user.friends_with?(user)%>
         <% next if  current_user.requested_friends.include?(user) %>
