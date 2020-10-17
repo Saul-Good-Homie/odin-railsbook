@@ -1,10 +1,8 @@
 
 <%= simple_form_for [post, comment] do |f| %>
   <div class="form-group">
-    <div class="form-control">
-   
-      <%= f.input :body, input_html: { class: "textarea "}, wrapper: false, label: false, placeholder: "Leave a comment..." %>
-        <br/>
+    <div class="form-control" id="comment">
+      <%= f.input :body, input_html: { class: "textarea mb-2"}, wrapper: false, label: false, placeholder: "Leave a comment..." %>
       <%= f.submit "Submit comment", class: "btn btn-primary" %>
     </div>
   </div>

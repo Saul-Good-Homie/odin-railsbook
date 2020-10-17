@@ -1,11 +1,6 @@
   <%= simple_form_for(@post) do |f| %>
     <%= f.error_notification %>
-      <div class="form-group">
-        <div class="form-control">
-          <%= f.input :post, label: "What's on your mind?", input_html: { class: "textarea "}, wrapper: false, label_html: {class: "label"}, placeholder: "Compose a new Post...", autofocus: true %>
-          <div class= "mb-2"> </div>
-          <%= f.button :submit, class: "btn btn-primary" %>
-        </div>
-      </div>
-    
+      <%= f.input :post, label: false, input_html: { class: "textarea"}, wrapper: false, label_html: {class: "label"}, placeholder: "What's on your mind, #{current_user.name}?", autofocus: true %>
+      <div class= "mb-2"> </div>
+      <%= f.button :submit, class: "btn btn-primary" %>  
   <% end %>

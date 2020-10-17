@@ -4,3 +4,14 @@
   color: white;
   background-color: #3b5998;
 }
+
+a.deco-none {
+  color: inherit;
+  text-decoration: none;
+}
+
+.textarea {
+  resize: none;
+  border-radius: 25px;
+  height: auto;
+}
