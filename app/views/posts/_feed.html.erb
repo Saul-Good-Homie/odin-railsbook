@@ -10,6 +10,24 @@
         </div>
 
         <% if user_signed_in? && current_user.id == post.user.id%>
+
+        <%# testing dropdown menu %>
+        <%# <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                ...
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+        </div>
+        %>
+
+
+
+
+
             <div class="col btn-group-sm mr-2" role="group" aria-label="Second group">         
                 <button type="button" class="btn btn-secondary"><%= link_to post do %>
                         <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-link-45deg" fill="white" xmlns="http://www.w3.org/2000/svg">
