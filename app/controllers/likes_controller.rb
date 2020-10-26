@@ -6,6 +6,10 @@ class LikesController < ApplicationController
         def create
             if !already_liked?
                 @post.likes.create(user_id: current_user.id)
+
+                Notification.create(recipient: @post.user, actor: current_user, 
+                    action: "liked", notifiable: @post)
+                    
                 redirect_to root_path
             end
         end

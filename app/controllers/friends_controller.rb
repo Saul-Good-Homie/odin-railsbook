@@ -12,6 +12,10 @@ class FriendsController < ApplicationController
         @user = current_user
         @friend = User.find(params[:id])
         @user.friend_request(@friend)
+        
+        Notification.create(recipient: @friend, actor: current_user, 
+            action: "sent a friend request", notifiable: @user)
+
         redirect_to friends_path
     end
 
@@ -19,6 +23,10 @@ class FriendsController < ApplicationController
         @user = current_user
         @friend = User.find(params[:id])
         @user.accept_request(@friend)
+
+        Notification.create(recipient: @friend, actor: current_user, 
+            action: "accepted your friend request", notifiable: @user)
+
         redirect_to friends_path
     end
 
