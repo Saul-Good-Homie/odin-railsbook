@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+    <div class="col text-center">
+    </div>
+    <div class="col-sm-6">
+        <div class="row mb-3">
+
+            <% @notifications.each do |n| %>
+                <div class="card mb-3"> 
+                    <div class= "row mt-1 mb-1">
+                        <%= "#{n.actor_id} #{n.action} on your #{n.notifiable_type} "%>
+                    </div>
+                </div>
+                <%end%>
+        </div>
+
+    </div>
+    <div class="col text-center">
+    </div>
+  </div>
+</div>
+
+
