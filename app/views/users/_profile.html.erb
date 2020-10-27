@@ -7,10 +7,25 @@
         <div class="col-md-8">
             <div class="card-body">
                 <h5 class="card-title"><%=@user.name%></h5>
-                <p class="card-text">Posts: <small class="text-muted"><%= @user.posts.count%></small></p> 
+                <p class="card-text">Posts: <small class="text-muted"><%= @user.posts.count%></small> 
                 <p class="card-text">Friends: <small class="text-muted"><%= @user.friends.count%></small></p> 
+
+
+                <% if current_user == @user %>
+                <% elsif current_user.friends_with?(@user)%>
+                    <%= link_to "Remove Friend", friends_remove_path(id: @user.id), method: :post, class: "btn btn-warning" %>
+                <% elsif current_user.pending_friends.include?(@user)%>
+                    <%= link_to "Request Pending!", '#', class: "btn btn-secondary" %>
+                <% elsif current_user.requested_friends.include?(@user) %>
+                    <%= link_to "Accept Friend Request", friends_accept_path(id: @user.id), method: :post, class: "btn btn-success" %>
+                <% else%>
+                    <%= link_to "Add Friend", friends_path(id: @user.id), method: :post, class: "btn btn-primary" %>
+                <% end %>
+                    
             </div>
         </div>
+        
+        </div>
     </div>
-</div>
+
 
