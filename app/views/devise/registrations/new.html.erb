@@ -15,6 +15,9 @@
 				<%= f.input :password, required: true, input_html: { class:"input" }, wrapper: false, label_html: { class:"label" }, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
 
 				<%= f.input :password_confirmation, required: true, input_html: { class: "input" }, wrapper: false, label_html: { class: "label" } %>		
+        
+        <%= f.label "Profile Photo" %>
+        <%= f.file_field :profile_pic%> <br>
 
 		 		<%= f.button :submit, "Sign up", class:"button is-info is-medium" %>
 

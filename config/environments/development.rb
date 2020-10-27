@@ -65,4 +65,7 @@ config.action_mailer.perform_deliveries = true
 
 #devise default URL
 config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+#active storage for profile images
+config.active_storage.service = :local
 end

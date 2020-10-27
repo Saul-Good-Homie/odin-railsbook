@@ -1,7 +1,11 @@
 <div class="card mb-3" style="max-width: 560px;">
     <div class="row no-gutters">
         <div class="col-md-4">
+            <% if @user.profile_pic.attached? %>
+            <img src="<%=(url_for(@user.profile_pic))%>", class="image-size">
+            <% else %>
             <img src="https://bulma.io/images/placeholders/64x64.png">
+            <% end %>
         </div>
         
         <div class="col-md-8">
@@ -9,7 +13,10 @@
                 <h5 class="card-title"><%=@user.name%></h5>
                 <p class="card-text">Posts: <small class="text-muted"><%= @user.posts.count%></small> 
                 <p class="card-text">Friends: <small class="text-muted"><%= @user.friends.count%></small></p> 
+                <% if current_user == @user %>
+                    <%=link_to "Edit Profile", edit_user_registration_path%>
 
+                <% end %>
 
                 <% if current_user == @user %>
                 <% elsif current_user.friends_with?(@user)%>

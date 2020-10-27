@@ -10,6 +10,13 @@ class UsersController < ApplicationController
     @post = Post.new
     @posts = @user.posts
   end
+
+  private
+
+  # Only allow a list of trusted parameters through.
+  def user_params
+    params.require(:user).permit(:profile_pic)
+  end
   
 end
 
