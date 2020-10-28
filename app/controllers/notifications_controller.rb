@@ -9,8 +9,9 @@ class NotificationsController < ApplicationController
     end
 
     def mark_as_read
-        @notifications = Notification.where(recipient: current_user).unread
-        @notifcation.update(read_at: Time.zone.now)
+        @notification = Notification.find(params[:id])
+        @notification.update(read_at: Time.zone.now)
+        redirect_to notifications_path
     end
 
 

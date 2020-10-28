@@ -7,7 +7,12 @@ Rails.application.routes.draw do
   
   resources :users, :only =>[:show]
   resources :posts
-  resources :notifications
+
+  resources :notifications do
+    collection do
+      post :mark_as_read
+    end
+  end
 
   resources :posts do
     resources :likes, :comments

@@ -24,6 +24,8 @@
 
                         <% end %>
                     </div>
+                      <small><%=link_to "Mark as Read", mark_as_read_notifications_path(id: n.id), :method=> :post, class: "deco-none"%></small>
+
                 </div>
                 <%end%>
         </div>
