@@ -1,7 +1,7 @@
 <% @posts.each do |post| %>
 <div class="card mb-3"> 
     <div class= "row mt-1 mb-1">
-        <div class="col no-gutters">
+        <div class="col-sm-auto no-gutters">
             <% if post.user.profile_pic.attached? %>
                 <img src="<%=(url_for(post.user.profile_pic))%>", class="image-size">
             <% else %>
@@ -27,10 +27,6 @@
             </div>
         </div>
         %>
-
-
-
-
 
             <div class="col btn-group-sm mr-2" role="group" aria-label="Second group">         
                 <button type="button" class="btn btn-secondary"><%= link_to post do %>
