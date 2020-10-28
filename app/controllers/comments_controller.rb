@@ -18,9 +18,10 @@ class CommentsController < ApplicationController
             # Notification.create(recipient: user, actor: current_user, 
             #                     action: "commented", notifiable: @post)
             # end
-            Notification.create(recipient: @post.user, actor: current_user, 
-                action: "commented", notifiable: @post)
-
+            if current_user != @post.user
+                Notification.create(recipient: @post.user, actor: current_user, 
+                    action: "commented", notifiable: @post)
+            end
             redirect_to root_path
         else 
 

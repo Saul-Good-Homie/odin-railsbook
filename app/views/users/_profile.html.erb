@@ -1,6 +1,7 @@
-<div class="card mb-3" style="max-width: 560px;">
+<div class="card mb-1" style="max-width: 560px;">
+
     <div class="row no-gutters">
-        <div class="col-md-auto">
+        <div class="col-sm-auto">
             <% if @user.profile_pic.attached? %>
             <img src="<%=(url_for(@user.profile_pic))%>", class="image-size">
             <% else %>
@@ -8,14 +9,17 @@
             <% end %>
         </div>
         
-        <div class="col-md-8">
-            <div class="card-body">
-                <h5 class="card-title"><%=@user.name%></h5>
-                <p class="card-text">Posts: <small class="text-muted"><%= @user.posts.count%></small> 
-                <p class="card-text">Friends: <small class="text-muted"><%= @user.friends.count%></small></p> 
+        <div class="col">    
+            <h5 class="card-title"><%=@user.name%></h5>
+        </div>
+    </div>
+
+        <div class="card-body">
+            <p class="card-text">Posts: <small class="text-muted"><%= @user.posts.count%></small> 
+            <p class="card-text">Friends: <small class="text-muted"><%= @user.friends.count%></small></p> 
+        
                 <% if current_user == @user %>
                     <%=link_to "Edit Profile", edit_user_registration_path%>
-
                 <% end %>
 
                 <% if current_user == @user %>
@@ -27,12 +31,8 @@
                     <%= link_to "Accept Friend Request", friends_accept_path(id: @user.id), method: :post, class: "btn btn-success" %>
                 <% else%>
                     <%= link_to "Add Friend", friends_path(id: @user.id), method: :post, class: "btn btn-primary" %>
-                <% end %>
-                    
-            </div>
+                <% end %>         
         </div>
-        
-        </div>
-    </div>
+</div>
 
 

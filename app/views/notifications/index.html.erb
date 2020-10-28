@@ -9,20 +9,28 @@
                 <div class="card mb-3"> 
                     <div class= "row mt-1 mb-1">
                       <%if n.action == "commented"%>
-                      <strong><%=link_to n.actor.name, user_path(id: n.actor_id), class: "deco-none"%></strong>
-                      <%="#{n.action} on your"%> <strong><%=link_to n.notifiable_type, post_path(id: n.notifiable_id)%></strong>
-                        
-                        <% elsif n.action == "liked"%>
+                      <span>
                         <strong><%=link_to n.actor.name, user_path(id: n.actor_id), class: "deco-none"%></strong>
-                        <%= "#{n.action} your" %><strong><%=link_to n.notifiable_type, post_path(id: n.notifiable_id)%></strong>
+                        <%="#{n.action} on your"%> <strong><%=link_to n.notifiable_type, post_path(id: n.notifiable_id)%></strong>
+                      </span>
 
-                        <% elsif n.action == "accepted your friend request"%>
-                          <strong><%=link_to n.actor.name, user_path(id: n.actor_id), class: "deco-none"%></strong><%= "#{n.action}."%>
+                      <% elsif n.action == "liked"%>
+                      <span>
+                        <strong><%=link_to n.actor.name, user_path(id: n.actor_id), class: "deco-none"%></strong>
+                        <%= "#{n.action} your " %><strong><%=link_to n.notifiable_type, post_path(id: n.notifiable_id)%></strong>
+                      </span>
 
-                        <% elsif n.action == "sent a friend request"%>
-                          <strong><%=link_to n.actor.name, user_path(id: n.actor_id), class: "deco-none"%></strong><%= "#{n.action}."%>
+                      <% elsif n.action == "accepted your friend request"%>
+                      <span>
+                        <strong><%=link_to n.actor.name, user_path(id: n.actor_id), class: "deco-none"%></strong><%= "#{n.action}."%>
+                      </span>
+                      
+                      <% elsif n.action == "sent a friend request"%>
+                      <span>
+                        <strong><%=link_to n.actor.name, user_path(id: n.actor_id), class: "deco-none"%></strong><%= "#{n.action}."%>
+                      </span>
 
-                        <% end %>
+                      <% end %>
                     </div>
                       <small><%=link_to "Mark as Read", mark_as_read_notifications_path(id: n.id), :method=> :post, class: "deco-none"%></small>
 
