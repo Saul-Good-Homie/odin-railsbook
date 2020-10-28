@@ -23,7 +23,7 @@
                 input_html: { autocomplete: "current-password" } %>
 
     <%= f.label "Profile Photo" %>
-    <%= f.file_field :profile_pic%> <br>
+    <%= f.file_field :profile_pic, direct_upload: true %> <br>
   </div>
 
   <div class="form-actions">

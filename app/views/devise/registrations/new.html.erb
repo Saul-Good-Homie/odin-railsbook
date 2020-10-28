@@ -17,7 +17,7 @@
 				<%= f.input :password_confirmation, required: true, input_html: { class: "input" }, wrapper: false, label_html: { class: "label" } %>		
         
         <%= f.label "Profile Photo" %>
-        <%= f.file_field :profile_pic%> <br>
+        <%= f.file_field :profile_pic, direct_upload: true%> <br>
 
 		 		<%= f.button :submit, "Sign up", class:"button is-info is-medium" %>
 
