@@ -3,11 +3,14 @@ Rails.application.routes.draw do
   match '/users',   to: 'users#index',   via: 'get'
   match '/users/:id',     to: 'users#show',       via: 'get'
 
-  devise_for :users, :controllers => {registrations: "registrations"}, :path_prefix => 'd'
-  
+  devise_for :users, :controllers => {registrations: "registrations", omniauth_callbacks: 'users/omniauth_callbacks' }, :path_prefix => 'd'
+  #devise_for :users, controllers: { omniauth_callbacks: 'omniauth_callbacks' }
+
+
   resources :users, :only =>[:show]
   resources :posts
-
+  resources :friends, only: [:index, :create]
+  
   resources :notifications do
     collection do
       post :mark_as_read
@@ -25,7 +28,7 @@ Rails.application.routes.draw do
   post "/friends/unblock" => "friends/unblock"
 
 
-  resources :friends, only: [:index, :create]
+ 
   
 
 

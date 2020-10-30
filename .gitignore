@@ -28,3 +28,5 @@
 
 #ingore cloudinary API keys
 /config/cloudinary.yml
+# Ignore application configuration
+/config/application.yml
