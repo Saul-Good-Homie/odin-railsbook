@@ -12,7 +12,7 @@ class LikesController < ApplicationController
                         action: "liked", notifiable: @post)
                 end
                     
-                redirect_to root_path
+                redirect_back(fallback_location: root_path)
             end
         end
     
@@ -22,7 +22,7 @@ class LikesController < ApplicationController
             else
                 @like.destroy
             end
-                redirect_to root_path
+                redirect_back(fallback_location: root_path)
         end
     
         def find_like

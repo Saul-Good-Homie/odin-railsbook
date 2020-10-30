@@ -1,24 +1,26 @@
-# README
+## Skolbook
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+#### This is the final capstone project in the Rails curse of the Odin Project. In this project I attempt to recreate facebook. Including all basic functionality of creating posts, liking, commenting, sending and recieving friend requests and notifications.
 
-Things you may want to cover:
+Ruby on Rails Project from [The Odin Project](https://www.theodinproject.com/courses/ruby-on-rails/lessons/final-project)
 
-* Ruby version
+Created by Saul Belisle, follow me on Twitter: [@saul_good_homie](https://twitter.com/saul_good_homie)
 
-* System dependencies
+View this project [online]()
 
-* Configuration
+Skills and technologies practiced:
 
-* Database creation
+- Ruby
+- Rails
+- Bootstrap
+- Devise - User Authentication and Authorization
+- OmniAuth - Facebook
+- Mailers
 
-* Database initialization
+Pipeline (needs to be added):
 
-* How to run the test suite
+- convert certain menus to javascript dropdowns
+- Clean up CSS formatting in Bootstrap
+- Javascript timeouts for flash notices
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Move notifications from their index page into mainmenu dropdown

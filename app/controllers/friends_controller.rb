@@ -16,7 +16,7 @@ class FriendsController < ApplicationController
         Notification.create(recipient: @friend, actor: current_user, 
             action: "sent a friend request", notifiable: @user)
 
-        redirect_to friends_path
+        redirect_back(fallback_location: root_path)
     end
 
     def accept
@@ -27,14 +27,14 @@ class FriendsController < ApplicationController
         Notification.create(recipient: @friend, actor: current_user, 
             action: "accepted your friend request", notifiable: @user)
 
-        redirect_to friends_path
+        redirect_to user_path(@friend)
     end
 
     def decline
         @user = current_user
         @friend = User.find(params[:id])
         @user.decline_request(@friend)
-        redirect_to friends_path
+        redirect_to root_path
     end
 
     def remove
