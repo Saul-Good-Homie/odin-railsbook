@@ -22,12 +22,12 @@
 
                       <% elsif n.action == "accepted your friend request"%>
                       <span>
-                        <strong><%=link_to n.actor.name, user_path(id: n.actor_id), class: "deco-none"%></strong><%= "#{n.action}."%>
+                        <strong><%=link_to n.actor.name, user_path(id: n.actor_id), class: "deco-none"%></strong><%= " #{n.action}."%>
                       </span>
                       
                       <% elsif n.action == "sent a friend request"%>
                       <span>
-                        <strong><%=link_to n.actor.name, user_path(id: n.actor_id), class: "deco-none"%></strong><%= "#{n.action}."%>
+                        <strong><%=link_to n.actor.name, user_path(id: n.actor_id), class: "deco-none"%></strong><%= " #{n.action}."%>
                       </span>
 
                       <% end %>
