@@ -1,4 +1,5 @@
 <% @posts.each do |post| %>
+    <% if current_user.friends.include?(post.user) || post.user == current_user %>
 <div class="card mb-3"> 
     <div class= "row mt-1 mb-1">
         <div class="col-sm-auto no-gutters">
@@ -12,7 +13,7 @@
             <strong><%= link_to post.user.name, user_path(id: post.user.id), class: "deco-none" %> </strong><br>
             <small> <%= post.created_at.to_date %></small>
         </div>
-
+    
         <% if user_signed_in? && current_user.id == post.user.id%>
 
         <%# testing dropdown menu %>
@@ -123,5 +124,5 @@
     </div>
         
 </div>
-
+<% end %>
 <% end %> 
