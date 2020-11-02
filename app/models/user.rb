@@ -14,14 +14,6 @@ class User < ApplicationRecord
   
   has_friendship
 
-  after_create :send_friend_request
-
-  #add code to send friend request from me, upon new user sign up. 
-  def send_friend_request
-  
-  end
-
-
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.email = auth.info.email

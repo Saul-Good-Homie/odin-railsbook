@@ -4,11 +4,11 @@ class RegistrationsController < Devise::RegistrationsController
     def create
         super
         UserMailer.welcome_email(resource).deliver unless resource.invalid?
-        #@admin = User.find(1)
-        #@new_user = resource
-        #@admin.friend_request(@user)
-        #Notification.create(recipient: @new_user, actor: @admin, 
-            #action: "sent a friend request", notifiable: @user)
+        @admin = User.find(1)
+        @new_user = resource
+        @admin.friend_request(@user)
+        Notification.create(recipient: @new_user, actor: @admin, 
+            action: "sent a friend request", notifiable: @user)
     end
 
 private
