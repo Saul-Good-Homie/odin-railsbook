@@ -78,9 +78,9 @@ Rails.application.configure do
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
 
-#devise default URL
-# ActionMailer Config
-  config.action_mailer.default_url_options = {:host => ‘stormy-springs-25084.herokuapp.com', :protocal => 'https'}
+  #devise default URL
+  # ActionMailer Config
+  config.action_mailer.default_url_options = {host: "stormy-springs-25084.herokuapp.com", protocal: "https"}
 
   # Use a different logger for distributed setups.
   # require 'syslog/logger'
