@@ -80,7 +80,7 @@ Rails.application.configure do
 
 #devise default URL
 # ActionMailer Config
-config.action_mailer.default_url_options = {:host => ‘https://stormy-springs-25084.herokuapp.com'}
+  config.action_mailer.default_url_options = {:host => ‘https://stormy-springs-25084.herokuapp.com'}
 
   # Use a different logger for distributed setups.
   # require 'syslog/logger'
@@ -95,5 +95,5 @@ config.action_mailer.default_url_options = {:host => ‘https://stormy-springs-2
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
- 
+
 end
