@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root "posts#index"
   match '/users',   to: 'users#index',   via: 'get'
   match '/users/:id',     to: 'users#show',       via: 'get'
+  get "/pages/:page" => "pages#show", :controller => 'pages', :action => 'show', :as => 'my_page'
 
   devise_for :users, :controllers => {registrations: "registrations", omniauth_callbacks: 'users/omniauth_callbacks' }, :path_prefix => 'd'
   #devise_for :users, controllers: { omniauth_callbacks: 'omniauth_callbacks' }
@@ -10,6 +11,7 @@ Rails.application.routes.draw do
   resources :users, :only =>[:show]
   resources :posts
   resources :friends, only: [:index, :create]
+  
   
   resources :notifications do
     collection do

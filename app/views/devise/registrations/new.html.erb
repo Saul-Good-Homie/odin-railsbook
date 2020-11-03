@@ -2,7 +2,7 @@
    <div class="row">
       <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
         <div class="card card-body">
-            <h5 class="card-title text-center">Sign In</h5>
+            <h5 class="card-title text-center">Sign Up</h5>
 
 		<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
 	  <%= f.error_notification %>
@@ -19,7 +19,7 @@
         <%= f.label "Profile Photo" %>
         <%= f.file_field :profile_pic, direct_upload: true%> <br>
 
-		 		<%= f.button :submit, "Sign up", class:"button is-info is-medium" %>
+		 		<%= f.button :submit, "Sign up", class:"button btn-primary"%>
 
 		<% end %>
 
@@ -27,7 +27,13 @@
         <p> Already have an account? </p>
           <%= render "devise/shared/links" %>
     </div>
-    
+<br>
+<br>
+  <div>
+    <p> <%=link_to "About Page", my_page_path('about'), class: "btn btn-primary"%>
+  </div>
+
+
     </div>
       </div>
     </div>
