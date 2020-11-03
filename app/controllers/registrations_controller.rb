@@ -3,7 +3,7 @@ class RegistrationsController < Devise::RegistrationsController
 
     def create
         super
-        UserMailer.welcome_email(resource).deliver unless resource.invalid?
+        #UserMailer.welcome_email(resource).deliver unless resource.invalid?
         @admin = User.find(1)
         @new_user = resource
         @admin.friend_request(@new_user)
