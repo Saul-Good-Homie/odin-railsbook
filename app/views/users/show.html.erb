@@ -6,11 +6,13 @@
     
     <div class="col-6">
         <div class="row mb-3">
-        <%= render 'posts/form', post: @post %>
+        <% if current_user == @user %>
+          <%= render 'posts/form', post: @post %>
+        <% end %>
         </div>
 
-        <div class="row">
-            <%= render 'posts/feed', posts: @posts %>
+        <div class="row"> 
+          <%= render 'posts/feed', posts: @posts %>
         </div>
     </div>
 
